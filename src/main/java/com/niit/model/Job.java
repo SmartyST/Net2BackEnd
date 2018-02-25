@@ -1,17 +1,31 @@
 package com.niit.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="JobDetail")
 public class Job 
 {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String job_id;
+		@Column(nullable=false)
 	private String job_title;
-	private String job_designation;
+		@Column(nullable=false)
 	private String job_description;
+		@Column(nullable=false)
+	private String Job_skill;
 	private String job_location;
 	private String job_salary;
 	private String job_experience;
-	private String status;
-	private String job_role;
-	
+		@Column(nullable=false)
+	private String CompanyName;
+		
 	
 	public String getJob_id() {
 		return job_id;
@@ -24,12 +38,6 @@ public class Job
 	}
 	public void setJob_title(String job_title) {
 		this.job_title = job_title;
-	}
-	public String getJob_designation() {
-		return job_designation;
-	}
-	public void setJob_designation(String job_designation) {
-		this.job_designation = job_designation;
 	}
 	public String getJob_description() {
 		return job_description;
@@ -55,18 +63,19 @@ public class Job
 	public void setJob_experience(String job_experience) {
 		this.job_experience = job_experience;
 	}
-	public String getStatus() {
-		return status;
+	public String getJob_skill() {
+		return Job_skill;
 	}
-	public void setStatus(String status) {
-		this.status = status;
+	public void setJob_skill(String job_skill) {
+		Job_skill = job_skill;
 	}
-	public String getJob_role() {
-		return job_role;
+	public String getCompanyName() {
+		return CompanyName;
 	}
-	public void setJob_role(String job_role) {
-		this.job_role = job_role;
+	public void setCompanyName(String companyName) {
+		CompanyName = companyName;
 	}
+	
 	
 
 	

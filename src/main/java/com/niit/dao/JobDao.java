@@ -4,8 +4,7 @@ import com.niit.model.Job;
 
 public interface JobDao 
 {
-	public boolean addJob(Job job);
+	public void addJob(Job job);
 	
-	public String nextJobID();
 
 }
