@@ -10,12 +10,12 @@ import org.springframework.stereotype.Repository;
 import com.niit.dao.JobDao;
 import com.niit.model.Job;
 
-@Repository("jobDaoImpl")
+@Repository
 @Transactional
 public class JobDaoImpl implements JobDao
 {
 	@Autowired
-	public SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 	
 	public JobDaoImpl()
 	{

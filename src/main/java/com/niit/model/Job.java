@@ -13,24 +13,23 @@ public class Job
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String job_id;
+	private int job_id;
 		@Column(nullable=false)
 	private String job_title;
-		@Column(nullable=false)
 	private String job_description;
 		@Column(nullable=false)
-	private String Job_skill;
+	private String job_skill;
 	private String job_location;
 	private String job_salary;
+	private String companyName;
 	private String job_experience;
-		@Column(nullable=false)
-	private String CompanyName;
+	
 		
 	
-	public String getJob_id() {
+	public int getJob_id() {
 		return job_id;
 	}
-	public void setJob_id(String job_id) {
+	public void setJob_id(int job_id) {
 		this.job_id = job_id;
 	}
 	public String getJob_title() {
@@ -64,17 +63,18 @@ public class Job
 		this.job_experience = job_experience;
 	}
 	public String getJob_skill() {
-		return Job_skill;
+		return job_skill;
 	}
 	public void setJob_skill(String job_skill) {
-		Job_skill = job_skill;
+		this.job_skill = job_skill;
 	}
 	public String getCompanyName() {
-		return CompanyName;
+		return companyName;
 	}
 	public void setCompanyName(String companyName) {
-		CompanyName = companyName;
+		this.companyName = companyName;
 	}
+	
 	
 	
 
