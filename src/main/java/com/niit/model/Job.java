@@ -1,5 +1,8 @@
 package com.niit.model;
 
+//import java.sql.Date;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +16,7 @@ public class Job
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int job_id;
+	private int id;
 		@Column(nullable=false)
 	private String job_title;
 	private String job_description;
@@ -23,14 +26,13 @@ public class Job
 	private String job_salary;
 	private String companyName;
 	private String job_experience;
+	private Date job_postedOn;
 	
-		
-	
-	public int getJob_id() {
-		return job_id;
+	public int getId() {
+		return id;
 	}
-	public void setJob_id(int job_id) {
-		this.job_id = job_id;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getJob_title() {
 		return job_title;
@@ -74,9 +76,12 @@ public class Job
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
+	public Date getJob_postedOn() {
+		return job_postedOn;
+	}
+	public void setJob_postedOn(Date job_postedOn) {
+		this.job_postedOn = job_postedOn;
+	}
 	
-	
-	
-
 	
 }
