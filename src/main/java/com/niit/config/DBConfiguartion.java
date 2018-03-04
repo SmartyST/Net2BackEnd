@@ -12,6 +12,7 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.model.BlogPost;
 import com.niit.model.Job;
 import com.niit.model.User;
 
@@ -34,7 +35,7 @@ public class DBConfiguartion
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsfb.addProperties(hibernateProperties);
-		Class classes[] = new Class[]{User.class,Job.class};	
+		Class classes[] = new Class[]{User.class,Job.class,BlogPost.class};	
 		return lsfb.addAnnotatedClasses(classes).buildSessionFactory();
 		
 	}
@@ -47,7 +48,7 @@ public class DBConfiguartion
 	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
 	    dataSource.setUsername("MYPROJECT2");
 	    dataSource.setPassword("som");
-	    return dataSource;    
+	    return dataSource;
 	}
 	
 	@Bean
