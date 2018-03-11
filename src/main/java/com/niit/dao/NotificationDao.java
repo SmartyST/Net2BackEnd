@@ -8,4 +8,9 @@ public interface NotificationDao
 {
 	List<Notification> getNotificationsNotViwed(String email);
 
+	Notification getNotification(int id);
+
+	void updateNotification(int id);
+	
+
 }

@@ -13,6 +13,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.model.BlogPost;
+import com.niit.model.BlogPostLikes;
 import com.niit.model.Job;
 import com.niit.model.Notification;
 import com.niit.model.User;
@@ -36,7 +37,7 @@ public class DBConfiguartion
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsfb.addProperties(hibernateProperties);
-		Class classes[] = new Class[]{User.class,Job.class,BlogPost.class,Notification.class};	
+		Class classes[] = new Class[]{User.class,Job.class,BlogPost.class,Notification.class,BlogPostLikes.class};	
 		return lsfb.addAnnotatedClasses(classes).buildSessionFactory();
 		
 	}
