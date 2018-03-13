@@ -33,10 +33,11 @@ public class BlogPostLikesDaoImpl implements BlogPostLikesDao
 	{
 		Session session=sessionFactory.getCurrentSession();
 		BlogPostLikes blogPostLikes=hasUserLikedBlog(id, email);
+		BlogPost blogPost;
 		if (blogPostLikes==null) 
 		{
 			blogPostLikes=new BlogPostLikes();
-			BlogPost blogPost=(BlogPost) session.get(BlogPost.class, id);
+			blogPost=(BlogPost) session.get(BlogPost.class, id);
 			User user=(User) session.get(User.class, email);
 			blogPostLikes.setBlogPost(blogPost);
 			blogPostLikes.setUser(user);
@@ -47,13 +48,13 @@ public class BlogPostLikesDaoImpl implements BlogPostLikesDao
 		else 
 		{
 			session.delete(blogPostLikes);
-			BlogPost blogPost=(BlogPost) session.get(BlogPost.class, id);
+			blogPost=(BlogPost) session.get(BlogPost.class, id);
 			blogPost.setLikes(blogPost.getLikes() - 1);
 			session.update(blogPost);
 
 		}
 		
-		return null;
+		return blogPost;
 	}
 
 	
