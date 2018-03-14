@@ -53,6 +53,7 @@ public class BlogPostDaoImpl implements BlogPostDao
 		notification.setBlogTitle(blog.getBlog_title());
 		notification.setApprovalStatus("Approved");
 		notification.setEmail(blog.getBlog_postedBy().getEmail());
+		session.save(notification);
 		
 	}
 
