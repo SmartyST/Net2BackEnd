@@ -17,5 +17,7 @@ public interface FriendDao
 
 	void deleteRequest(Friend request);
 	
+	List<Friend> listofFriends(String email);
+	
 
 }
